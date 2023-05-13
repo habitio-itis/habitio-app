@@ -1,0 +1,66 @@
+env:
+   browser: true
+   es6: true
+   node: true
+   "react-native/react-native": true
+ignorePatterns:
+   - "test/**"
+extends:
+   - eslint:recommended
+   - plugin:@typescript-eslint/recommended
+   - plugin:@typescript-eslint/eslint-recommended
+   - prettier
+parserOptions:
+   project: "./tsconfig.json"
+   sourceType: module
+   ecmaFeatures:
+      jsx: true
+   ecmaVersion: 2022
+plugins:
+   - "@typescript-eslint"
+   - "prefer-arrow"
+   - "react"
+   - "react-native"
+rules:
+   no-duplicate-imports: error
+   no-var:
+      - error
+   no-console: error
+   indent:
+      - error
+      - tab
+      - SwitchCase: 1
+   no-empty: error
+   no-empty-pattern: error
+   no-fallthrough:
+      - error
+      - commentPattern: "break[\\s\\w]*omitted"
+   linebreak-style:
+      - error
+      - unix
+   quotes:
+      - error
+      - double
+   semi:
+      - error
+      - always
+   object-curly-spacing:
+      - error
+      - always
+   comma-dangle:
+      - error
+      - always-multiline
+   "@typescript-eslint/no-namespace":
+      - off
+   "@typescript-eslint/no-empty-interface":
+      - off
+   "@typescript-eslint/no-unused-vars":
+      - error
+   "react-native/no-unused-styles":
+      - 2
+   "react-native/split-platform-components":
+      - 2
+   "react-native/no-inline-styles":
+      - 2
+   "react-native/no-raw-text":
+      - 2

@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "jsx": "react-native",
+    "baseUrl": "./",
+    "paths": {
+      "@Constants/*": [
+        "src/common/constants/*"
+      ],
+      "@Components/*": [
+        "src/components/*"
+      ],
+      "@Request": [
+        "src/common/requests/axios"
+      ]
+    }
+  },
+  "extends": "expo/tsconfig.base"
+}
