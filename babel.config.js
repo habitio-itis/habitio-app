@@ -10,7 +10,7 @@ module.exports = function(api) {
 					alias: {
 						"@Constants": "./src/common/constants",
 						"@Components": "./src/components",
-						"@Request": "./src/common/requests/axios",
+						"@Request": "./src/common/requests/Axios",
 					},
 				},
 			],

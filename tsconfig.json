@@ -10,7 +10,7 @@
         "src/components/*"
       ],
       "@Request": [
-        "src/common/requests/axios"
+        "src/common/requests/Axios"
       ]
     }
   },
