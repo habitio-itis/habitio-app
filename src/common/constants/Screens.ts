@@ -5,6 +5,7 @@
  */
 
 export const Screens = {
+	START: "Start",
 	REGISTER: "Register",
 	LOGIN: "Login",
 	HOME: "Home",
