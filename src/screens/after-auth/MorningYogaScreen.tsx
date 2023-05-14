@@ -1,8 +1,9 @@
 /**
  * @author: CHIKIRIAY
- * @created: 5/14/23
- * @Time: 7:29 PM
+ * @created: 5/15/23
+ * @Time: 12:15 AM
  */
+
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { ButtonAfterRegister } from "@Components/ui/ButtonAfterRegister";
@@ -10,24 +11,23 @@ import { Screens } from "@Constants/Screens";
 import { FONTS } from "@Constants/Styles";
 import { LocalSvg } from "react-native-svg";
 
-export const GetBurnScreen = ({ navigation }) => {
+export const MorningYogaScreen = ({ navigation }) => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.imageContainer}>
-				<LocalSvg asset={require("../assets/images/GetBurnRunMan.svg")} />
+				<LocalSvg asset={require("../../assets/images/MorningYogaPerson.svg")} />
 			</View>
 			<View style={styles.textsContainer}>
 				<View style={styles.titleContainer}>
-					<Text style={styles.title}>Get Burn</Text>
+					<Text style={styles.title}>Morning Yoga</Text>
 				</View>
 				<View style={styles.descriptionContainer}>
 					<Text style={styles.description}>
-						Let’s keep burning, to achive yours goals, it hurts only temporarily, if you give
-						up now you will be in pain forever
+						Let's start a healthy lifestyle with us, we can determine your diet every day. healthy eating is fun
 					</Text>
 				</View>
 			</View>
-			<ButtonAfterRegister screen={Screens.EAT_WELL} navigation={navigation} />
+			<ButtonAfterRegister screen={Screens.MORNING_YOGA} navigation={navigation} />
 		</View>
 	);
 };

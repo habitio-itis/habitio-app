@@ -15,9 +15,10 @@ import RegisterScreen from "../screens/RegisterScreen";
 import HomeScreen from "../screens/HomeScreen";
 import LoginScreen from "../screens/LoginScreen";
 import LoaderScreen from "../screens/LoaderScreen";
-import { TrackYourGoalScreen } from "../screens/TrackYourGoalScreen";
-import { GetBurnScreen } from "../screens/GetBurnScreen";
-import { EatWellScreen } from "../screens/EatWellScreen";
+import { TrackYourGoalScreen } from "../screens/after-auth/TrackYourGoalScreen";
+import { GetBurnScreen } from "../screens/after-auth/GetBurnScreen";
+import { EatWellScreen } from "../screens/after-auth/EatWellScreen";
+import { MorningYogaScreen } from "../screens/after-auth/MorningYogaScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -47,6 +48,7 @@ export const Navigation: FC = () => {
 						<Stack.Screen name={Screens.TRACK_YOUR_GOAL} component={TrackYourGoalScreen}/>
 						<Stack.Screen name={Screens.GET_BURN} component={GetBurnScreen}/>
 						<Stack.Screen name={Screens.EAT_WELL} component={EatWellScreen}/>
+						<Stack.Screen name={Screens.MORNING_YOGA} component={MorningYogaScreen}/>
 						<Stack.Screen name={Screens.HOME} component={HomeScreen}/>
 						<Stack.Screen name={Screens.LOGIN} component={LoginScreen}/>
 					</> : <Stack.Screen name={Screens.SPLASH} component={LoaderScreen}/>

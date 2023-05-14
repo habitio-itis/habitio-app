@@ -14,7 +14,7 @@ export const EatWellScreen = ({ navigation }) => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.imageContainer}>
-				<LocalSvg asset={require("../assets/images/EatWell.svg")} />
+				<LocalSvg asset={require("../../assets/images/EatWellPerson.svg")} />
 			</View>
 			<View style={styles.textsContainer}>
 				<View style={styles.titleContainer}>
@@ -27,7 +27,7 @@ export const EatWellScreen = ({ navigation }) => {
 					</Text>
 				</View>
 			</View>
-			<ButtonAfterRegister screen={Screens.EAT_WELL} navigation={navigation} />
+			<ButtonAfterRegister screen={Screens.MORNING_YOGA} navigation={navigation} />
 		</View>
 	);
 };
