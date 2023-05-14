@@ -11,6 +11,7 @@ export enum Screens {
 	REGISTER = "Register",
 	TRACK_YOUR_GOAL = "TrackYourGoal",
 	GET_BURN = "GetBurn",
+	EAT_WELL = "EatWell",
 	LOGIN = "Login",
 	HOME = "Home",
 	LOGOUT = "Logout",
