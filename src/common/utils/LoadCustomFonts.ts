@@ -13,8 +13,8 @@ export const loadCustomFonts = (): Promise<void> => {
 	return Font.loadAsync({
 		"Inter-Regular": require("../../assets/fonts/Inter-Regular.ttf"),
 		"Rubik": require("../../assets/fonts/Rubik-Regular.ttf"),
-		"Roboto-Regular": require("../../assets/fonts/Roboto-Regular.ttf"),
-		"Roboto-Black": require("../../assets/fonts/Roboto-Black.ttf"),
-		"Roboto-Bold": require("../../assets/fonts/Roboto-Bold.ttf"),
+		"Rubik-Regular": require("../../assets/fonts/Rubik-Regular.ttf"),
+		"Rubik-Black": require("../../assets/fonts/Rubik-Black.ttf"),
+		"Rubik-Bold": require("../../assets/fonts/Rubik-Bold.ttf"),
 	});
 };

@@ -19,7 +19,7 @@ export interface ICustomerButton {
 export const CustomBigButton = ({ onPress, text, buttonStyle, textStyle }: ICustomerButton) => {
 	return (
 		<TouchableOpacity onPress={onPress} style={Object.assign({}, styles.button, buttonStyle)}>
-			<Text style={Object.assign({}, styles.text, textStyle)}>{text}</Text>
+			<Text style={Object.assign({}, styles.img, textStyle)}>{text}</Text>
 		</TouchableOpacity>
 	);
 };
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 		width: "75%",
 		elevation: 5,
 	},
-	text: {
+	img: {
 		color: "#fff",
 		fontSize: 16,
 		textAlign: "center",
