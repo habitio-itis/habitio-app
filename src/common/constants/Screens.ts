@@ -12,6 +12,7 @@ export enum Screens {
 	TRACK_YOUR_GOAL = "TrackYourGoal",
 	GET_BURN = "GetBurn",
 	EAT_WELL = "EatWell",
+	MORNING_YOGA = "MorningYoga",
 	LOGIN = "Login",
 	HOME = "Home",
 	LOGOUT = "Logout",

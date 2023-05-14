@@ -4,30 +4,30 @@
  * @Time: 7:29 PM
  */
 import { StyleSheet, Text, View } from "react-native";
-import { LocalSvg } from "react-native-svg";
 import React from "react";
 import { ButtonAfterRegister } from "@Components/ui/ButtonAfterRegister";
 import { Screens } from "@Constants/Screens";
 import { FONTS } from "@Constants/Styles";
+import { LocalSvg } from "react-native-svg";
 
-export const TrackYourGoalScreen = ({ navigation }) => {
+export const GetBurnScreen = ({ navigation }) => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.imageContainer}>
-				<LocalSvg asset={require("../assets/images/TrackYourGoalScreenAfterRegister.svg")} />
+				<LocalSvg asset={require("../../assets/images/GetBurnRunPerson.svg")} />
 			</View>
 			<View style={styles.textsContainer}>
 				<View style={styles.titleContainer}>
-					<Text style={styles.title}>Track Your Goal</Text>
+					<Text style={styles.title}>Get Burn</Text>
 				</View>
 				<View style={styles.descriptionContainer}>
 					<Text style={styles.description}>
-						Don't worry if you have trouble determining your goals, We can help you determine
-						your goals and track your goals
+						Let’s keep burning, to achive yours goals, it hurts only temporarily, if you give
+						up now you will be in pain forever
 					</Text>
 				</View>
 			</View>
-			<ButtonAfterRegister screen={Screens.GET_BURN} navigation={navigation} />
+			<ButtonAfterRegister screen={Screens.EAT_WELL} navigation={navigation} />
 		</View>
 	);
 };
@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
 		flexDirection: "column",
 		alignItems: "center",
 		flex: 1,
+		backgroundColor: "#ffffff",
 	},
 	imageContainer: {
 		top: 0,
