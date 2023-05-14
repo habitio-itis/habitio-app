@@ -5,7 +5,9 @@
  */
 
 export const Screens = {
+	SPLASH: "Splash",
 	START: "Start",
+	GET_START: "GetStart",
 	REGISTER: "Register",
 	LOGIN: "Login",
 	HOME: "Home",

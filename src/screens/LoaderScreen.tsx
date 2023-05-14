@@ -1,15 +1,14 @@
 /**
  * @author: CHIKIRIAY
- * @created: 5/13/23
- * @Time: 1:58 AM
+ * @created: 5/14/23
+ * @Time: 3:46 PM
  */
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { FONTS } from "@Constants/Styles";
+import { ProgressCircle } from "@Components/ui/ProgressCircle";
 
-const HomeScreen = () => {
-
+const LoaderScreen = () => {
 	return (
 		<LinearGradient
 			colors={["#92A3FD", "#9DCEFF"]}
@@ -17,7 +16,7 @@ const HomeScreen = () => {
 			end={{ x: 1, y: 1 }}
 			style={styles.container}
 		>
-			<Text style={styles.title}>H A B I T I O</Text>
+			<ProgressCircle />
 		</LinearGradient>
 	);
 };
@@ -30,7 +29,5 @@ const styles = StyleSheet.create({
 		width: "100%",
 		height: "100%",
 	},
-	title: { ...FONTS.habitIoH1 },
 });
-
-export default HomeScreen;
+export default LoaderScreen;

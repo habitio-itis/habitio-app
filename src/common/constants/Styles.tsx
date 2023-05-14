@@ -4,7 +4,8 @@
  * @Time: 9:24 PM
  */
 
-import { Dimensions } from "react-native";
+import { Dimensions, TextStyle } from "react-native";
+
 const { width, height } = Dimensions.get("window");
 
 export const COLORS = {
@@ -35,9 +36,9 @@ export const SIZES = {
 
 	// app dimensions
 	width,
-	height
+	height,
 };
-export const FONTS = {
+export const FONTS: Record<string, TextStyle> = {
 	h1: { fontFamily: "Roboto-Black", fontSize: SIZES.h1, lineHeight: 36 },
 	h2: { fontFamily: "Roboto-Bold", fontSize: SIZES.h2, lineHeight: 30 },
 	h3: { fontFamily: "Roboto-Bold", fontSize: SIZES.h3, lineHeight: 22 },
@@ -47,6 +48,16 @@ export const FONTS = {
 	body3: { fontFamily: "Roboto-Regular", fontSize: SIZES.body3, lineHeight: 22 },
 	body4: { fontFamily: "Roboto-Regular", fontSize: SIZES.body4, lineHeight: 22 },
 	body5: { fontFamily: "Roboto-Regular", fontSize: SIZES.body5, lineHeight: 22 },
+	habitIoH1: {
+		fontFamily: "Inter",
+		fontSize: 36,
+		lineHeight: 44,
+		textAlign: "left",
+		color: "#FFFFFF",
+		textShadowColor: "rgba(0,0,0,0.25)",
+		textShadowOffset: { width: 0, height: 4 },
+		textShadowRadius: 4,
+	},
 };
 
 const appTheme = { COLORS, SIZES, FONTS };
