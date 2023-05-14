@@ -10,6 +10,7 @@ export enum Screens {
 	GET_START = "GetStart",
 	REGISTER = "Register",
 	TRACK_YOUR_GOAL = "TrackYourGoal",
+	GET_BURN = "GetBurn",
 	LOGIN = "Login",
 	HOME = "Home",
 	LOGOUT = "Logout",

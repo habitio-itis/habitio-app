@@ -16,6 +16,7 @@ import HomeScreen from "../screens/HomeScreen";
 import LoginScreen from "../screens/LoginScreen";
 import LoaderScreen from "../screens/LoaderScreen";
 import { TrackYourGoalScreen } from "../screens/TrackYourGoalScreen";
+import { GetBurnScreen } from "../screens/GetBurnScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -39,10 +40,11 @@ export const Navigation: FC = () => {
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
 				{fontsLoaded ?
 					<>
-						<Stack.Screen name={Screens.TRACK_YOUR_GOAL} component={TrackYourGoalScreen}/>
 						<Stack.Screen name={Screens.START} component={StartScreen}/>
 						<Stack.Screen name={Screens.GET_START} component={GetStartScreen}/>
 						<Stack.Screen name={Screens.REGISTER} component={RegisterScreen}/>
+						<Stack.Screen name={Screens.TRACK_YOUR_GOAL} component={TrackYourGoalScreen}/>
+						<Stack.Screen name={Screens.GET_BURN} component={GetBurnScreen}/>
 						<Stack.Screen name={Screens.HOME} component={HomeScreen}/>
 						<Stack.Screen name={Screens.LOGIN} component={LoginScreen}/>
 					</> : <Stack.Screen name={Screens.SPLASH} component={LoaderScreen}/>
