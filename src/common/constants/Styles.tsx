@@ -49,7 +49,7 @@ export const FONTS: Record<string, TextStyle> = {
 	body4: { fontFamily: "Roboto-Regular", fontSize: SIZES.body4, lineHeight: 22 },
 	body5: { fontFamily: "Roboto-Regular", fontSize: SIZES.body5, lineHeight: 22 },
 	habitIoH1: {
-		fontFamily: "Inter",
+		fontFamily: "Inter-Regular",
 		fontSize: 36,
 		lineHeight: 44,
 		textAlign: "left",

@@ -27,7 +27,7 @@ export const Navigation: FC = () => {
 			await loadCustomFonts();
 
 			// Ждем 3 секунды по красоте
-			await timeout(3000);
+			await timeout(2000);
 			setFontsLoaded(true);
 		};
 		loadFonts();

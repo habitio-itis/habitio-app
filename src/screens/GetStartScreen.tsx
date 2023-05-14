@@ -3,17 +3,16 @@
  * @created: 5/14/23
  * @Time: 9:50 AM
  */
-import { Alert, Image, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { FONTS } from "@Constants/Styles";
+import { LocalSvg } from "react-native-svg";
 import { CustomBigButton } from "@Components/ui/CustomBigButton";
+import { Screens } from "@Constants/Screens";
 
-const GetStartScreen = () => {
+const GetStartScreen = ({ navigation }) => {
 	const handlePress = () => {
-		// setTimeout(() => {
-		// 	navigation.navigate(Screens.REGISTER);
-		// }, 5000); // ждем 3 секунды
-		Alert.alert("Button pressed");
+		navigation.navigate(Screens.REGISTER);
 	};
 
 	return (
@@ -30,13 +29,16 @@ const GetStartScreen = () => {
 					Explore the app, Find some peace of mind to achive good habits.
 				</Text>
 			</View>
-			<View>
-				<View>
-					<Image source={require("../assets/images/GetStartPerson.svg")} />
-				</View>
-				<View>
-					<CustomBigButton onPress={handlePress} text="GET STARTED" />
-				</View>
+			<View style={styles.imageContainer}>
+				<LocalSvg asset={require("../assets/images/GetStartPerson.svg")} />
+			</View>
+			<View style={styles.buttonContainer}>
+				<CustomBigButton
+					onPress={handlePress}
+					text="GET STARTED"
+					buttonStyle={styles.button}
+					textStyle={styles.buttonText}
+				/>
 			</View>
 		</View>
 	);
@@ -59,6 +61,17 @@ const styles = StyleSheet.create({
 	},
 	headerContainer: {
 		marginTop: 60,
+	},
+	imageContainer: {
+		bottom: 0,
+	},
+	buttonContainer: {
+		position: "absolute",
+		zIndex: 2,
+		bottom: 75,
+		width: "100%",
+		alignItems: "center",
+		height: 65,
 	},
 	title: {
 		...FONTS.habitIoH1,
@@ -93,6 +106,10 @@ const styles = StyleSheet.create({
 		textAlign: "center",
 		color: "#EBEAEC",
 	},
+	button: { backgroundColor: "#EBEAEC", borderRadius: 38 },
+	buttonText: {
+		color: "#3F414E",
+		fontSize: 15,
+	},
 });
-
 export default GetStartScreen;

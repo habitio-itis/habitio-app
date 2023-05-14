@@ -11,7 +11,10 @@ import * as Font from "expo-font";
  */
 export const loadCustomFonts = (): Promise<void> => {
 	return Font.loadAsync({
-		"Inter": require("../../assets/fonts/Inter-Regular.ttf"),
+		"Inter-Regular": require("../../assets/fonts/Inter-Regular.ttf"),
 		"Rubik": require("../../assets/fonts/Rubik-Regular.ttf"),
+		"Roboto-Regular": require("../../assets/fonts/Roboto-Regular.ttf"),
+		"Roboto-Black": require("../../assets/fonts/Roboto-Black.ttf"),
+		"Roboto-Bold": require("../../assets/fonts/Roboto-Bold.ttf"),
 	});
 };

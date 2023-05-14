@@ -7,8 +7,12 @@ import React from "react";
 import { StyleSheet, Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { FONTS } from "@Constants/Styles";
+import { Screens } from "@Constants/Screens";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
+	const onTouchEndHandler = () => {
+		navigation.navigate(Screens.GET_START);
+	};
 
 	return (
 		<LinearGradient
@@ -16,6 +20,7 @@ const HomeScreen = () => {
 			start={{ x: 0, y: 0 }}
 			end={{ x: 1, y: 1 }}
 			style={styles.container}
+			onTouchEnd={onTouchEndHandler}
 		>
 			<Text style={styles.title}>H A B I T I O</Text>
 		</LinearGradient>
