@@ -15,6 +15,7 @@ import RegisterScreen from "../screens/RegisterScreen";
 import HomeScreen from "../screens/HomeScreen";
 import LoginScreen from "../screens/LoginScreen";
 import LoaderScreen from "../screens/LoaderScreen";
+import { TrackYourGoalScreen } from "../screens/TrackYourGoalScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,7 +27,7 @@ export const Navigation: FC = () => {
 		const loadFonts = async () => {
 			await loadCustomFonts();
 
-			// Ждем 3 секунды по красоте
+			// Ждем 2 секунды по красоте
 			await timeout(2000);
 			setFontsLoaded(true);
 		};
@@ -38,6 +39,7 @@ export const Navigation: FC = () => {
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
 				{fontsLoaded ?
 					<>
+						<Stack.Screen name={Screens.TRACK_YOUR_GOAL} component={TrackYourGoalScreen}/>
 						<Stack.Screen name={Screens.START} component={StartScreen}/>
 						<Stack.Screen name={Screens.GET_START} component={GetStartScreen}/>
 						<Stack.Screen name={Screens.REGISTER} component={RegisterScreen}/>
