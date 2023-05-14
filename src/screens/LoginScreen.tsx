@@ -9,6 +9,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import { Screens } from "@Constants/Screens";
 import { PhoneInput } from "@Components/ui/PhoneInput";
 import { PasswordInput } from "@Components/ui/PasswordInput";
+import { FacebookAuthButton } from "@Components/ui/OAuthButton";
 
 const LoginScreen = ({ navigation }) => {
 	const [phone, setPhone] = useState("");
@@ -22,10 +23,7 @@ const LoginScreen = ({ navigation }) => {
 
 	return (
 		<View>
-			<PhoneInput
-				value={phone}
-				onChangeText={setPhone}
-			/>
+			<FacebookAuthButton />
 			<PasswordInput
 				value={password}
 				onChangeText={setPassword}

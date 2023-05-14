@@ -9,6 +9,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import { Screens } from "@Constants/Screens";
 import { PhoneInput } from "@Components/ui/PhoneInput";
 import { PasswordInput } from "@Components/ui/PasswordInput";
+import { OAuthButton } from "@Components/ui/OAuthButton";
 
 const RegisterScreen = ({ navigation }) => {
 	const [phone, setPhone] = useState("");
@@ -22,6 +23,8 @@ const RegisterScreen = ({ navigation }) => {
 
 	return (
 		<View style={styles.container}>
+			<OAuthButton theme="facebook" />
+			<OAuthButton theme="google" />
 			<Text style={styles.title}>Create your account</Text>
 			<PhoneInput value={phone} onChangeText={setPhone} />
 			<PasswordInput value={password} onChangeText={setPassword} />
