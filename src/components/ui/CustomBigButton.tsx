@@ -18,8 +18,8 @@ export interface ICustomerButton {
 
 export const CustomBigButton = ({ onPress, text, buttonStyle, textStyle }: ICustomerButton) => {
 	return (
-		<TouchableOpacity onPress={onPress} style={Object.assign({}, styles.button, buttonStyle)}>
-			<Text style={Object.assign({}, styles.img, textStyle)}>{text}</Text>
+		<TouchableOpacity onPress={onPress} style={{ ...styles.button, ...(buttonStyle as object) }}>
+			<Text style={{ ...styles.img, ...(textStyle as object) }}>{text}</Text>
 		</TouchableOpacity>
 	);
 };

@@ -4,12 +4,11 @@
  * @Time: 12:33 PM
  */
 import React from "react";
-import { StyleProp, StyleSheet, TouchableOpacity, ViewStyle } from "react-native";
+import { StyleProp, TouchableOpacity, ViewStyle } from "react-native";
 import { LocalSvg } from "react-native-svg";
 
 export interface ICustomCircleButton {
 	onPress: () => void;
-
 
 	buttonStyle?: StyleProp<ViewStyle>;
 
@@ -25,7 +24,7 @@ export const CustomCircleButton = ({
 		<TouchableOpacity onPress={onPress} style={buttonStyle}>
 			<LocalSvg
 				asset={require("../../assets/images/CircleButton.svg")}
-				style={Object.assign({}, styles.img, imgStyle ?? {})}
+				style={imgStyle}
 				width={"100%"}
 				height={"100%"}
 				onTouchEnd={onPress}
@@ -33,9 +32,3 @@ export const CustomCircleButton = ({
 		</TouchableOpacity>
 	);
 };
-
-const styles = StyleSheet.create({
-	img: {
-		resizeMode: "contain",
-	},
-});
