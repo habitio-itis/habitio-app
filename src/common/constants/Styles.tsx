@@ -25,11 +25,11 @@ export const SIZES = {
 
 	// font sizes
 	h1: 30,
-	h2: 22,
+	h2: 24,
 	h3: 16,
 	h4: 14,
 	body1: 30,
-	body2: 22,
+	body2: 24,
 	body3: 16,
 	body4: 14,
 	body5: 12,
@@ -38,16 +38,16 @@ export const SIZES = {
 	width,
 	height,
 };
-export const FONTS: Record<string, TextStyle> = {
-	h1: { fontFamily: "Roboto-Black", fontSize: SIZES.h1, lineHeight: 36 },
-	h2: { fontFamily: "Roboto-Bold", fontSize: SIZES.h2, lineHeight: 30 },
-	h3: { fontFamily: "Roboto-Bold", fontSize: SIZES.h3, lineHeight: 22 },
-	h4: { fontFamily: "Roboto-Bold", fontSize: SIZES.h4, lineHeight: 22 },
-	body1: { fontFamily: "Roboto-Regular", fontSize: SIZES.body1, lineHeight: 36 },
-	body2: { fontFamily: "Roboto-Regular", fontSize: SIZES.body2, lineHeight: 30 },
-	body3: { fontFamily: "Roboto-Regular", fontSize: SIZES.body3, lineHeight: 22 },
-	body4: { fontFamily: "Roboto-Regular", fontSize: SIZES.body4, lineHeight: 22 },
-	body5: { fontFamily: "Roboto-Regular", fontSize: SIZES.body5, lineHeight: 22 },
+export const FONTS = {
+	h1: { fontFamily: "Rubik-Black", fontSize: SIZES.h1, lineHeight: 36 },
+	h2: { fontFamily: "Rubik-Bold", fontSize: SIZES.h2, lineHeight: 30 },
+	h3: { fontFamily: "Rubik-Bold", fontSize: SIZES.h3, lineHeight: 22 },
+	h4: { fontFamily: "Rubik-Bold", fontSize: SIZES.h4, lineHeight: 22 },
+	body1: { fontFamily: "Rubik-Regular", fontSize: SIZES.body1, lineHeight: 36 },
+	body2: { fontFamily: "Rubik-Regular", fontSize: SIZES.body2, lineHeight: 30 },
+	body3: { fontFamily: "Rubik-Regular", fontSize: SIZES.body3, lineHeight: 22 },
+	body4: { fontFamily: "Rubik-Regular", fontSize: SIZES.body4, lineHeight: 22 },
+	body5: { fontFamily: "Rubik-Regular", fontSize: SIZES.body5, lineHeight: 22 },
 	habitIoH1: {
 		fontFamily: "Inter-Regular",
 		fontSize: 36,
@@ -57,9 +57,5 @@ export const FONTS: Record<string, TextStyle> = {
 		textShadowColor: "rgba(0,0,0,0.25)",
 		textShadowOffset: { width: 0, height: 4 },
 		textShadowRadius: 4,
-	},
+	} as TextStyle,
 };
-
-const appTheme = { COLORS, SIZES, FONTS };
-
-export default appTheme;

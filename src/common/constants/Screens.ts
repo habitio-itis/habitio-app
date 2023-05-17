@@ -4,12 +4,16 @@
  * @Time: 12:20 AM
  */
 
-export const Screens = {
-	SPLASH: "Splash",
-	START: "Start",
-	GET_START: "GetStart",
-	REGISTER: "Register",
-	LOGIN: "Login",
-	HOME: "Home",
-	LOGOUT: "Logout",
-};
+export enum Screens {
+	SPLASH = "Splash",
+	START = "Start",
+	GET_START = "GetStart",
+	REGISTER = "Register",
+	TRACK_YOUR_GOAL = "TrackYourGoal",
+	GET_BURN = "GetBurn",
+	EAT_WELL = "EatWell",
+	MORNING_YOGA = "MorningYoga",
+	LOGIN = "Login",
+	HOME = "Home",
+	LOGOUT = "Logout",
+}

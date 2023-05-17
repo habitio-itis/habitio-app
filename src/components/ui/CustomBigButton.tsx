@@ -4,26 +4,26 @@
  * @Time: 12:33 PM
  */
 import React from "react";
-import { StyleProp, StyleSheet, Text, TextStyle, TouchableOpacity, ViewStyle } from "react-native";
+import { StyleSheet, Text, TextStyle, TouchableOpacity, ViewStyle } from "react-native";
 
-export interface ICustomerButton {
+export interface Props {
 	onPress: () => void;
 
 	text: string;
 
-	buttonStyle: StyleProp<ViewStyle>;
+	buttonStyle: ViewStyle;
 
-	textStyle: StyleProp<TextStyle>;
+	textStyle: TextStyle;
 }
 
-export const CustomBigButton = ({ onPress, text, buttonStyle, textStyle }: ICustomerButton) => {
+export const CustomBigButton = ({ onPress, text, buttonStyle, textStyle }: Props) => {
 	return (
-		<TouchableOpacity onPress={onPress} style={Object.assign({}, styles.button, buttonStyle)}>
-			<Text style={Object.assign({}, styles.text, textStyle)}>{text}</Text>
+		<TouchableOpacity onPress={onPress} style={StyleSheet.compose(styles.button, buttonStyle)}>
+			<Text style={StyleSheet.compose(styles.text, textStyle)}>{text}</Text>
 		</TouchableOpacity>
 	);
 };
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<{ button: ViewStyle; text: TextStyle }>({
 	button: {
 		backgroundColor: "#3B82F6",
 		borderRadius: 10,
