@@ -8,13 +8,13 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-nativ
 import { Ionicons } from "@expo/vector-icons";
 import { validatePassword } from "../../common/utils/ValidatePassword";
 
-export interface IPasswordInput {
+export interface Props {
 	placeholder?: string;
 	value: string;
 	onChangeText: (text: string) => void;
 }
 
-export const PasswordInput = ({ placeholder, value, onChangeText }: IPasswordInput) => {
+export const PasswordInput = ({ placeholder, value, onChangeText }: Props) => {
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 	const [errMessages, setErrMessage] = useState<string[]>([]);
 

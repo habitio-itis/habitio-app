@@ -7,7 +7,7 @@ import React from "react";
 import { StyleProp, TouchableOpacity, ViewStyle } from "react-native";
 import { LocalSvg } from "react-native-svg";
 
-export interface ICustomCircleButton {
+export interface Props {
 	onPress: () => void;
 
 	buttonStyle?: StyleProp<ViewStyle>;
@@ -15,11 +15,7 @@ export interface ICustomCircleButton {
 	imgStyle?: StyleProp<ViewStyle>;
 }
 
-export const CustomCircleButton = ({
-	onPress,
-	buttonStyle,
-	imgStyle,
-}: ICustomCircleButton) => {
+export const CustomCircleButton = ({ onPress, buttonStyle, imgStyle }: Props) => {
 	return (
 		<TouchableOpacity onPress={onPress} style={buttonStyle}>
 			<LocalSvg

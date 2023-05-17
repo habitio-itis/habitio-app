@@ -4,7 +4,7 @@
  * @Time: 9:24 PM
  */
 
-import { Dimensions } from "react-native";
+import { Dimensions, TextStyle } from "react-native";
 
 const { width, height } = Dimensions.get("window");
 
@@ -57,5 +57,5 @@ export const FONTS = {
 		textShadowColor: "rgba(0,0,0,0.25)",
 		textShadowOffset: { width: 0, height: 4 },
 		textShadowRadius: 4,
-	},
+	} as TextStyle,
 };
