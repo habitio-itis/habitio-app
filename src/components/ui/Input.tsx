@@ -3,15 +3,15 @@
  * @created: 5/13/23
  * @Time: 7:17 PM
  */
-import React, { useState } from "react";
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import React, { FC, useState } from "react";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, ViewStyle } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { validatePassword } from "../../common/utils/ValidatePassword";
 
-export interface Props {
+interface Props {
+	type: "text" | "email" | "password";
 	placeholder?: string;
-	value: string;
-	onChangeText: (text: string) => void;
+	style?: ViewStyle;
 }
 
 export const PasswordInput = ({ placeholder, value, onChangeText }: Props) => {
@@ -23,17 +23,18 @@ export const PasswordInput = ({ placeholder, value, onChangeText }: Props) => {
 	};
 
 	const handlePasswordChange = (value: string) => {
-		onChangeText(value);
+		setValue(value);
 		setErrMessage(validatePassword(value));
 	};
 
 	return (
-		<View style={styles.container}>
+		<View style={[styles.container, style]}>
 			<View style={styles.inputEyeContainer}>
 				<View style={styles.inputContainer}>
 					<TextInput
 						style={styles.input}
-						placeholder={placeholder ?? "Введите пароль"}
+						placeholder={placeholder}
+						placeholderTextColor="#A1A4B2"
 						secureTextEntry={!isPasswordVisible}
 						value={value}
 						onChangeText={handlePasswordChange}
@@ -57,16 +58,16 @@ export const PasswordInput = ({ placeholder, value, onChangeText }: Props) => {
 const styles = StyleSheet.create({
 	container: {
 		flexDirection: "column",
+		alignItems: "center",
 		width: "100%",
 	},
 	inputEyeContainer: {
-		height: 70,
-		width: "100%",
+		backgroundColor: "#F2F3F7",
+		borderRadius: 15,
+		height: 63,
+		width: 374,
 		flexDirection: "row",
 		alignItems: "center",
-		borderWidth: 2,
-		borderColor: "#000000",
-		borderRadius: 10,
 	},
 	inputContainer: {
 		width: "85%",
@@ -76,9 +77,11 @@ const styles = StyleSheet.create({
 	},
 	eyeContainer: {},
 	input: {
+		paddingVertical: 18,
+		paddingHorizontal: 20,
+		border: 0,
 		flex: 1,
-		fontSize: 28,
-		padding: 10,
+		lineHeight: 17,
 	},
 	icon: {
 		width: 25,

@@ -6,7 +6,7 @@
 
 import { Dimensions, TextStyle } from "react-native";
 
-const { width, height } = Dimensions.get("window");
+export const { width, height } = Dimensions.get("window");
 
 export const COLORS = {
 	primary: "#FFCB3E",     // Light purple
