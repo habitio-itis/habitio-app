@@ -15,5 +15,6 @@ export enum Screens {
 	MORNING_YOGA = "MorningYoga",
 	LOGIN = "Login",
 	HOME = "Home",
+	MORNING_SELECTION = "MorningSelection",
 	LOGOUT = "Logout",
 }
