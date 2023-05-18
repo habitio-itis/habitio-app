@@ -9,7 +9,7 @@ import { LocalSvg } from "react-native-svg";
 import { TimePickerWithButton } from "@Components/ui/TimePickerWithButton";
 import { Screens } from "@Constants/Screens";
 
-export const MorningSelectionScreen = ({ navigation }) => {
+export const NightSelectionScreen = ({ navigation }) => {
 	const [hour, setHour] = useState();
 	const [minute, setMinute] = useState();
 	const [period, setPeriod] = useState();
@@ -23,12 +23,12 @@ export const MorningSelectionScreen = ({ navigation }) => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.headerContainer}>
-				<Text style={styles.text}>Whats time do you usually wake up?</Text>
+				<Text style={styles.text}>When do you want to reflect on your day</Text>
 			</View>
 			<View style={styles.imageButtonContainer}>
 				<LocalSvg
 					style={styles.image}
-					asset={require("../../assets/images/MorningSelectionSun.svg")}
+					asset={require("../../assets/images/NightSelectionMoon.svg")}
 				/>
 				<View style={styles.timePickerContainer}>
 					<TimePickerWithButton
@@ -52,14 +52,14 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		width: "100%",
 		height: "100%",
-		backgroundColor: "#8E97FD",
+		backgroundColor: "#4D57C8",
 	},
 	headerContainer: {
 		position: "absolute",
 		top: 80,
 		marginTop: 60,
 		zIndex: 2,
-		width: 290,
+		width: 350,
 		height: 82,
 	},
 	text: {
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
 	},
 	image: {
 		position: "absolute",
-		bottom: 125,
+		bottom: 110,
 	},
 	timePickerContainer: {
 		backgroundColor: "#3E4ACA",
