@@ -1,0 +1,6 @@
+{
+	"liveSassCompile.settings.generateMap": false,
+	"prettier.singleQuote": true,
+	"javascript.preferences.quoteStyle": "single",
+	"typescript.preferences.quoteStyle": "single"  
+}
