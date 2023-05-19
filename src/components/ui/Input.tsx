@@ -14,7 +14,7 @@ interface Props {
 	style?: ViewStyle;
 }
 
-export const PasswordInput = ({ placeholder, value, onChangeText }: Props) => {
+export const Input: FC<Props> = ({ placeholder, value, onChangeText, style }: Props) => {
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 	const [errMessages, setErrMessage] = useState<string[]>([]);
 

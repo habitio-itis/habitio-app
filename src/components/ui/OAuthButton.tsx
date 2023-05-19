@@ -30,7 +30,7 @@ const getStylesObject = (theme: "facebook" | "google") => {
 	} as const;
 	if (theme === "facebook") {
 		return StyleSheet.create({
-			button: { ...styles.button, backgroundColor: "#7583CA",  },
+			button: { ...styles.button, backgroundColor: "#7583CA"  },
 			text: { ...styles.text, color: "white" },
 		});
 	} else if (theme === "google") {

@@ -50,7 +50,6 @@ const getThemeStyles = (theme: Theme) => {
 			},
 		});
 	} else if (theme === "link") {
-		console.log(theme === "link");
 		return StyleSheet.create({
 			button: {
 				...styles.button,

@@ -4,7 +4,7 @@
  * @Time: 2:31 AM
  */
 import React, { useContext, useState } from "react";
-import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { AuthContext } from "../providers/AuthProvider";
 import { Screens } from "@Constants/Screens";
 import { Input } from "@Components/ui/Input";
@@ -12,7 +12,7 @@ import { OAuthButton } from "@Components/ui/OAuthButton";
 import { BackButton } from "@Components/ui/BackButton";
 import { LocalSvg } from "react-native-svg";
 import { FONTS } from "@Constants/Styles";
-import { AppButton } from '@Components/ui/Button';
+import { AppButton } from "@Components/ui/Button";
 
 const RegisterScreen = ({ navigation }) => {
 	const [phone, setPhone] = useState("");
