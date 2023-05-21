@@ -36,7 +36,7 @@ type AuthProviderProps = {
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
 	const [user, setUser] = useState<User | null>(null);
-	const [isLoading, setIsLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const registerHandler = async (login: string, email: string, password: string) => {
 		setIsLoading(true);
@@ -45,9 +45,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
 			setUser(newUser);
 
-			// сохраняем токен в хранилище
-			// const auth = await AuthService.login(newUser.username, password);
-			// await AsyncStorage.setItem(accessTokenKey, auth.accessToken);
+			const auth = await AuthService.login(newUser.username, password);
+			await AsyncStorage.setItem(accessTokenKey, auth.accessToken);
 		} catch (e) {
 			Alert.alert("Ошибка при регистрации", e);
 		} finally {
@@ -55,16 +54,13 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 		}
 	};
 
-	const loginHandler = async (login: string, password: string) => {
+	const loginHandler = async (username: string, password: string) => {
 		setIsLoading(true);
 		try {
-			const auth = await AuthService.login(login, password);
+			const auth = await AuthService.login(username, password);
 			await AsyncStorage.setItem(accessTokenKey, auth.accessToken);
 			// сохраняем информацию о пользователе в состояние
-			setUser(user);
-
-			// сохраняем токен в хранилище
-			await AsyncStorage.setItem(accessTokenKey, auth.accessToken);
+			// setUser(user);
 		} catch (e) {
 			Alert.alert("Ошибка при авторизации", e);
 		} finally {
@@ -72,10 +68,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 		}
 	};
 
-	const logoutHandler = async (accessToken: string) => {
+	const logoutHandler = async () => {
 		setIsLoading(true);
 		try {
-			await axiosPost("auth/logout", { accessToken });
+			// const accessToken = await AsyncStorage.getItem(accessTokenKey);
+			// await axiosPost("auth/logout", { accessToken });
 
 			// удаляем токен из хранилища
 			await AsyncStorage.removeItem(accessTokenKey);

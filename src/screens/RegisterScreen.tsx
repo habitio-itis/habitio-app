@@ -70,7 +70,7 @@ const RegisterScreen = ({ navigation }) => {
 				<AppButton style={styles.getStratedButton} text="GET STARTED" onPress={() => registerHandler(login, email, password)} />
 				<View style={styles.signUn}>
 					<Text>ALREADY HAVE AN ACCOUNT?</Text>
-					<AppButton theme="link" text=" SIGN IN" onPress={() => navigation.navigate(Screens.REGISTER)} />
+					<AppButton theme="link" text=" SIGN IN" onPress={() => navigation.navigate(Screens.LOGIN)} />
 				</View>
 			</View>
 		</SafeAreaView>

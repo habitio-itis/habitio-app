@@ -3,7 +3,7 @@
  * @created: 5/13/23
  * @Time: 2:02 AM
  */
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Text, SafeAreaView, View, StyleSheet } from "react-native";
 import { AuthContext } from "../providers/AuthProvider";
 import { Screens } from "@Constants/Screens";
@@ -15,14 +15,16 @@ import { LocalSvg } from "react-native-svg";
 import { FONTS } from "@Constants/Styles";
 
 const LoginScreen = ({ navigation }) => {
-	const [phone, setPhone] = useState("");
+	const [login, setLogin] = useState("");
 	const [password, setPassword] = useState("");
 	const { user, loginHandler } = useContext(AuthContext);
 
-	if (user) {
-		navigation.navigate(Screens.HOME);
-		return;
-	}
+	useEffect(() => {
+		if (user) {
+			navigation.navigate(Screens.HOME);
+			return;
+		}
+	}, [user]);
 
 	return (
 		<SafeAreaView style={styles.safeArea}>
@@ -41,10 +43,22 @@ const LoginScreen = ({ navigation }) => {
 				<OAuthButton theme="google" buttonStyle={styles.googleButton} onPress={() => {}} />
 				<Text style={styles.login}>OR LOG IN WITH EMAIL</Text>
 				<View style={styles.fields}>
-					<Input type="email" style={styles.input} placeholder="Email address" />
-					<Input type="password" style={styles.input} placeholder="Password" />
+					<Input
+						type="text"
+						style={styles.input}
+						placeholder="Login"
+						value={login}
+						onChangeText={setLogin}
+					/>
+					<Input
+						type="password"
+						style={styles.input}
+						placeholder="Password"
+						value={password}
+						onChangeText={setPassword}
+					/>
 				</View>
-				<AppButton text="Login" style={styles.loginButton} onPress={() => {}} />
+				<AppButton text="Login" style={styles.loginButton} onPress={() => loginHandler(login, password)} />
 				<AppButton text="Forgot Password?" theme="text" style={styles.forgotPassword} onPress={() => {}} />
 				<View style={styles.signIn}>
 					<Text>DON’T HAVE AN ACCOUNT? </Text>
