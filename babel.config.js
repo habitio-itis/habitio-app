@@ -11,6 +11,7 @@ module.exports = function(api) {
 						"@Constants": "./src/common/constants",
 						"@Components": "./src/components",
 						"@Request": "./src/common/requests/Axios",
+						"@Services": "./src/services",
 						"@Assets": ".src/assets",
 					},
 				},

@@ -11,10 +11,12 @@ import { validatePassword } from "../../common/utils/ValidatePassword";
 interface Props {
 	type: "text" | "email" | "password";
 	placeholder?: string;
+	value: string;
+	onChangeText: (text: string) => void;
 	style?: ViewStyle;
 }
 
-export const Input: FC<Props> = ({ placeholder, value, onChangeText, style }: Props) => {
+export const Input: FC<Props> = ({ type, placeholder, value, onChangeText, style }: Props) => {
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 	const [errMessages, setErrMessage] = useState<string[]>([]);
 
@@ -22,10 +24,14 @@ export const Input: FC<Props> = ({ placeholder, value, onChangeText, style }: Pr
 		setIsPasswordVisible(!isPasswordVisible);
 	};
 
-	const handlePasswordChange = (value: string) => {
-		setValue(value);
-		setErrMessage(validatePassword(value));
+	const handleTextChange = (value: string) => {
+		onChangeText(value);
+		if (isPassword) {
+			setErrMessage(validatePassword(value));
+		}
 	};
+
+	const isPassword = type === "password";
 
 	return (
 		<View style={[styles.container, style]}>
@@ -35,21 +41,19 @@ export const Input: FC<Props> = ({ placeholder, value, onChangeText, style }: Pr
 						style={styles.input}
 						placeholder={placeholder}
 						placeholderTextColor="#A1A4B2"
-						secureTextEntry={!isPasswordVisible}
+						secureTextEntry={isPassword && !isPasswordVisible}
 						value={value}
-						onChangeText={handlePasswordChange}
+						onChangeText={handleTextChange}
 					/>
 				</View>
 				<View style={styles.eyeContainer}>
 					<TouchableOpacity style={styles.icon} onPress={togglePasswordVisibility}>
-						<Ionicons name={isPasswordVisible ? "eye-off" : "eye"} size={24} color="#666" />
+						{isPassword && <Ionicons name={isPasswordVisible ? "eye-off" : "eye"} size={24} color="#666" />}
 					</TouchableOpacity>
 				</View>
 			</View>
 			<View style={styles.errMessagesContainer}>
-				{errMessages.map((message) => (
-					<Text style={styles.errMessage}>{`• ${message}`}</Text>
-				))}
+				{isPassword && errMessages.length !== 0 && <Text style={styles.errMessage}>{errMessages[0]}</Text>}
 			</View>
 		</View>
 	);

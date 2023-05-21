@@ -11,7 +11,13 @@
       ],
       "@Request": [
         "src/common/requests/Axios"
-      ]
+      ],
+	  "@Assets/*": [
+		"src/assets/*",
+	  ],
+	  "@Services/*": [
+		"src/services/*"
+	  ],
     }
   },
   "extends": "expo/tsconfig.base"

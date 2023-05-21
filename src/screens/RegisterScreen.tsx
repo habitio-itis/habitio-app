@@ -3,7 +3,7 @@
  * @created: 5/13/23
  * @Time: 2:31 AM
  */
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { AuthContext } from "../providers/AuthProvider";
 import { Screens } from "@Constants/Screens";
@@ -15,14 +15,18 @@ import { FONTS } from "@Constants/Styles";
 import { AppButton } from "@Components/ui/Button";
 
 const RegisterScreen = ({ navigation }) => {
-	const [phone, setPhone] = useState("");
+	const [login, setLogin] = useState("");
+	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const { user, registerHandler } = useContext(AuthContext);
 
-	if (user) {
-		navigation.navigate(Screens.HOME);
-		return;
-	}
+	useEffect(() => {
+		if (user) {
+			navigation.navigate(Screens.HOME);
+			return;
+		}
+	}, [user]);
+
 
 	return (
 		<SafeAreaView style={styles.safeArea}>
@@ -41,14 +45,32 @@ const RegisterScreen = ({ navigation }) => {
 				<OAuthButton theme="google" buttonStyle={styles.googleButton} onPress={() => {}} />
 				<Text style={styles.login}>OR LOG IN WITH EMAIL</Text>
 				<View style={styles.fields}>
-					<Input type="text" style={styles.input} placeholder="Login" />
-					<Input type="email" style={styles.input} placeholder="Email address" />
-					<Input type="password" style={styles.input} placeholder="Password" />
+					<Input
+						type="text"
+						value={login}
+						onChangeText={setLogin}
+						style={styles.input}
+						placeholder="Login"
+					/>
+					<Input
+						type="email"
+						value={email}
+						onChangeText={setEmail}
+						style={styles.input}
+						placeholder="Email address"
+					/>
+					<Input
+						type="password"
+						value={password}
+						onChangeText={setPassword}
+						style={styles.input}
+						placeholder="Password"
+					/>
 				</View>
-				<AppButton style={styles.getStratedButton} text="GET STARTED" onPress={() => {}} />
+				<AppButton style={styles.getStratedButton} text="GET STARTED" onPress={() => registerHandler(login, email, password)} />
 				<View style={styles.signUn}>
 					<Text>ALREADY HAVE AN ACCOUNT?</Text>
-					<AppButton theme="link" text=" SIGN IN" onPress={() => navigation.navigate(Screens.LOGIN)} />
+					<AppButton theme="link" text=" SIGN IN" onPress={() => navigation.navigate(Screens.REGISTER)} />
 				</View>
 			</View>
 		</SafeAreaView>
