@@ -17,7 +17,7 @@ export const NightSelectionScreen = ({ navigation }) => {
 	const onPressHandler = () => {
 		Alert.alert("Time:", `Hours: ${hour}, Minutes: ${minute}, Period: ${period}`);
 		//todo save
-		navigation.navigate(Screens.NIGHT_SELECTION);
+		navigation.navigate(Screens.PROCRASTINATE);
 	};
 
 	return (

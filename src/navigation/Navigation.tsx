@@ -21,6 +21,7 @@ import { EatWellScreen } from "../screens/after-auth/EatWellScreen";
 import { MorningYogaScreen } from "../screens/after-auth/MorningYogaScreen";
 import { MorningSelectionScreen } from "../screens/creating-new-habbit/MorningSelectionScreen";
 import { NightSelectionScreen } from "../screens/creating-new-habbit/NightSelectionScreen";
+import { ProcrastinateScreen } from "../screens/creating-new-habbit/ProcrastinateScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -55,6 +56,7 @@ export const Navigation: FC = () => {
 						<Stack.Screen name={Screens.LOGIN} component={LoginScreen}/>
 						<Stack.Screen name={Screens.MORNING_SELECTION} component={MorningSelectionScreen}/>
 						<Stack.Screen name={Screens.NIGHT_SELECTION} component={NightSelectionScreen}/>
+						<Stack.Screen name={Screens.PROCRASTINATE} component={ProcrastinateScreen}/>
 					</> : <Stack.Screen name={Screens.SPLASH} component={LoaderScreen}/>
 				}
 			</Stack.Navigator>
