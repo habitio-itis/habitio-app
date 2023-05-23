@@ -22,6 +22,7 @@ import { MorningYogaScreen } from "../screens/after-auth/MorningYogaScreen";
 import { MorningSelectionScreen } from "../screens/creating-new-habbit/MorningSelectionScreen";
 import { NightSelectionScreen } from "../screens/creating-new-habbit/NightSelectionScreen";
 import { ProcrastinateScreen } from "../screens/creating-new-habbit/ProcrastinateScreen";
+import { ProductiveScreen } from "../screens/creating-new-habbit/ProductiveScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -33,7 +34,7 @@ export const Navigation: FC = () => {
 		const loadFonts = async () => {
 			await loadCustomFonts();
 
-			// Ждем 2 секунды по красоте
+			// Ждем + 1 секунду по красоте
 			await timeout(1000);
 			setFontsLoaded(true);
 		};
@@ -57,6 +58,7 @@ export const Navigation: FC = () => {
 						<Stack.Screen name={Screens.MORNING_SELECTION} component={MorningSelectionScreen}/>
 						<Stack.Screen name={Screens.NIGHT_SELECTION} component={NightSelectionScreen}/>
 						<Stack.Screen name={Screens.PROCRASTINATE} component={ProcrastinateScreen}/>
+						<Stack.Screen name={Screens.PRODUCTIVE} component={ProductiveScreen}/>
 					</> : <Stack.Screen name={Screens.SPLASH} component={LoaderScreen}/>
 				}
 			</Stack.Navigator>
