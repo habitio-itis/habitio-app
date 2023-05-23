@@ -9,13 +9,13 @@ import WheelPickerExpo from "react-native-wheel-picker-expo";
 import { ItemType } from "react-native-wheel-picker-expo/src/types";
 import { TimePeriodEnum } from "../../common/types/time-period.enum";
 
-export interface ITimePicker {
+export interface Props {
 	setHour: Dispatch<SetStateAction<number>>;
 	setMinute: Dispatch<SetStateAction<number>>;
 	setPeriod: Dispatch<SetStateAction<TimePeriodEnum>>;
-	backgroundColor: string;
-	width: number;
-	height: number;
+	backgroundColor?: string;
+	width?: number | string;
+	height?: number | string;
 }
 
 /**
@@ -28,17 +28,10 @@ export interface ITimePicker {
  * @param height
  * @constructor
  */
-const TimePicker = ({
-	setHour,
-	setMinute,
-	setPeriod,
-	backgroundColor,
-	width,
-	height,
-}: ITimePicker) => {
+const TimePicker = ({ setHour, setMinute, setPeriod, backgroundColor, width, height }: Props) => {
 	const hours: ItemType[] = Array.from({ length: 12 }, (_, i) => ({
 		label: `${i + 1}`,
-		value: i,
+		value: i + 1,
 	}));
 	const minutes: ItemType[] = Array.from({ length: 60 }, (_, i) => ({ label: `${i}`, value: i }));
 	const periods: ItemType[] = [
@@ -46,15 +39,15 @@ const TimePicker = ({
 		{ label: TimePeriodEnum.PM, value: TimePeriodEnum.PM },
 	];
 	const backgroundColorFinal = backgroundColor ?? "#3E4ACA";
-	const widthFinal = width ?? 150;
-	const heightFinal = height ?? 150;
+	const widthFinal = (width as number) ?? 150;
+	const heightFinal = (height as number) ?? 150;
 
 	const renderHandler = (props) => (
 		<Text
 			style={[
 				styles.text,
 				{
-					fontSize: props.fontSize,
+					fontSize: props.fontSize * 1.6,
 					color: props.fontColor,
 					textAlign: props.textAlign,
 				},
@@ -63,6 +56,7 @@ const TimePicker = ({
 			{props.label}
 		</Text>
 	);
+
 	return (
 		<View style={styles.container}>
 			<WheelPickerExpo
@@ -108,12 +102,12 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		flexDirection: "row",
-		alignItems: "center",
 		justifyContent: "center",
+		overflow: "hidden",
 	},
 	text: {
 		fontFamily: "Rubik-Medium",
-		fontSize: 34,
+		fontSize: 40,
 		fontWeight: "bold",
 	},
 	block: { borderColor: "#BCBCBC", borderWidth: 2 },

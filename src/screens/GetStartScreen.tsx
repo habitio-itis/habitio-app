@@ -3,7 +3,7 @@
  * @created: 5/14/23
  * @Time: 9:50 AM
  */
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TextStyle, View } from "react-native";
 import React from "react";
 import { FONTS } from "@Constants/Styles";
 import { LocalSvg } from "react-native-svg";
@@ -29,7 +29,7 @@ const GetStartScreen = ({ navigation }) => {
 					Explore the app, Find some peace of mind to achive good habits.
 				</Text>
 			</View>
-			<View style={styles.imageContainer}>
+			<View style={styles.imageButtonContainer}>
 				<LocalSvg asset={require("../assets/images/GetStartPerson.svg")} />
 			</View>
 			<View style={styles.buttonContainer}>
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
 	headerContainer: {
 		marginTop: 60,
 	},
-	imageContainer: {
+	imageButtonContainer: {
 		bottom: 0,
 	},
 	buttonContainer: {
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
 		height: 65,
 	},
 	title: {
-		...FONTS.habitIoH1,
+		...FONTS.habitIoH1 as TextStyle,
 	},
 	h1: {
 		fontFamily: "Rubik",

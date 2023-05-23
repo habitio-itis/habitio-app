@@ -6,7 +6,7 @@
 import React from "react";
 import { StyleProp, StyleSheet, Text, TextStyle, TouchableOpacity, ViewStyle } from "react-native";
 
-export interface ICustomerButton {
+export interface Props {
 	onPress: () => void;
 
 	text: string;
@@ -16,7 +16,7 @@ export interface ICustomerButton {
 	textStyle: StyleProp<TextStyle>;
 }
 
-export const CustomBigButton = ({ onPress, text, buttonStyle, textStyle }: ICustomerButton) => {
+export const CustomBigButton = ({ onPress, text, buttonStyle, textStyle }: Props) => {
 	return (
 		<TouchableOpacity onPress={onPress} style={Object.assign({}, styles.button, buttonStyle)}>
 			<Text style={Object.assign({}, styles.img, textStyle)}>{text}</Text>
