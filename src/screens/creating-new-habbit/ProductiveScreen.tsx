@@ -1,22 +1,22 @@
 /**
  * @author: CHIKIRIAY
- * @created: 5/18/23
- * @Time: 3:19 AM
+ * @created: 5/23/23
+ * @Time: 10:35 PM
  */
 import { StyleSheet, Text, View } from "react-native";
 import { CustomBigImageButton } from "@Components/ui/CustomBigImageButton";
 import { Screens } from "@Constants/Screens";
 
-export const ProcrastinateScreen = ({ navigation }) => {
+export const ProductiveScreen = ({ navigation }) => {
 	const data = [
 		{
 			id: 1,
-			text: "Yes and i’m ready to change that",
+			text: "I want to build good habits",
 			image: require("../../assets/images/procrastinate/ProcrastinateButton1.svg"),
 		},
 		{
 			id: 2,
-			text: "No, I easily finish the tasks at hand",
+			text: "I want to be organized",
 			image: require("../../assets/images/procrastinate/ProcrastinateButton2.svg"),
 		},
 		{
@@ -27,13 +27,13 @@ export const ProcrastinateScreen = ({ navigation }) => {
 	];
 	const handlePress = (id: number) => () => {
 		// todo fetch
-		navigation.navigate(Screens.PRODUCTIVE, { id });
+		navigation.navigate(Screens.PROCRASTINATE, { id });
 	};
 
 	return (
 		<View style={styles.container}>
 			<View style={styles.textContainer}>
-				<Text style={styles.text}>Do you Procrastinate?</Text>
+				<Text style={styles.text}>What do you hope to achive with Main Habit</Text>
 			</View>
 			<View style={styles.rowsContainer}>
 				{data.map(({ text, id, image }) => (
