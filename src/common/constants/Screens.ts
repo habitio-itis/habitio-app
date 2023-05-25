@@ -16,4 +16,5 @@ export enum Screens {
 	LOGIN = "Login",
 	HOME = "Home",
 	LOGOUT = "Logout",
+	Habit = "Habit"
 }

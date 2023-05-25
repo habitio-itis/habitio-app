@@ -19,6 +19,7 @@ import { TrackYourGoalScreen } from "../screens/after-auth/TrackYourGoalScreen";
 import { GetBurnScreen } from "../screens/after-auth/GetBurnScreen";
 import { EatWellScreen } from "../screens/after-auth/EatWellScreen";
 import { MorningYogaScreen } from "../screens/after-auth/MorningYogaScreen";
+import { HabitScreen } from "../screens/HabitScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -51,6 +52,7 @@ export const Navigation: FC = () => {
 						<Stack.Screen name={Screens.MORNING_YOGA} component={MorningYogaScreen}/>
 						<Stack.Screen name={Screens.HOME} component={HomeScreen}/>
 						<Stack.Screen name={Screens.LOGIN} component={LoginScreen}/>
+						<Stack.Screen name={Screens.Habit} component={HabitScreen} />
 					</> : <Stack.Screen name={Screens.SPLASH} component={LoaderScreen}/>
 				}
 			</Stack.Navigator>

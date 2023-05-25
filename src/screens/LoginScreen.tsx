@@ -5,7 +5,7 @@
  */
 import React, { useContext, useEffect, useState } from "react";
 import { Text, SafeAreaView, View, StyleSheet } from "react-native";
-import { AuthContext } from "../providers/AuthProvider";
+import { AuthContext, isAuthorized } from "../providers/AuthProvider";
 import { Screens } from "@Constants/Screens";
 import { Input } from "@Components/ui/Input";
 import { OAuthButton } from "@Components/ui/OAuthButton";
