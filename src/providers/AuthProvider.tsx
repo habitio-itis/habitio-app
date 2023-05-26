@@ -10,14 +10,14 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as UserService from "@Services/user.service";
 import * as AuthService from "@Services/auth.service";
 import { User } from "@Services/user.service";
-import { accessTokenKey } from "../api-client";
+import { accessTokenKey, refreshTokenKey } from "../api-client";
 import LoaderScreen from "../screens/LoaderScreen";
 
 type AuthContextType = {
 	user: User | null;
 	registerHandler: (login: string, email: string, password: string) => void;
 	loginHandler: (username: string, password: string) => void;
-	logoutHandler: (accessToken: string) => void;
+	logoutHandler: () => void;
 };
 
 export const AuthContext = createContext<AuthContextType>({
@@ -73,7 +73,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 		setIsLoading(true);
 		try {
 			const auth = await AuthService.login(username, password);
-			await AsyncStorage.setItem(accessTokenKey, auth.accessToken);
+			await AsyncStorage.multiSet([[accessTokenKey, auth.accessToken], [refreshTokenKey, auth.refreshToken]]);
 			// TODO: Get user data from server
 			setUser({
 				username: "username",

@@ -13,6 +13,8 @@ import { padding } from "../utils/padding";
 import CalendarWeekRow from "@Components/ui/Calendar";
 import { HabbitButton } from "@Components/ui/HabitButton";
 import { AddButton } from "@Components/ui/AddButton";
+import * as HabitsService from "@Services/habits.service";
+import { Habit } from "@Services/habits.service";
 
 const mockHabits = [
 	{
@@ -40,7 +42,15 @@ const mockHabits = [
 const HomeScreen = ({ navigation }) => {
 	const { user, logoutHandler } = useContext(AuthContext);
 
-	const [habits, setHabits] = useState(mockHabits);
+	const [habits, setHabits] = useState<Habit[]>(mockHabits);
+
+	// useEffect(() => {
+	// 	const getHabits = async () => {
+	// 		const habits = await HabitsService.getHabits();
+	// 		setHabits(habits);
+	// 	};
+	// 	getHabits();
+	// }, [user]);
 
 	return (
 		<SafeAreaView  style={styles.container}>
@@ -54,7 +64,7 @@ const HomeScreen = ({ navigation }) => {
 				</View>
 				<View style={styles.habits}>
 					{habits.map(({ name, progress, id }, idx) => (
-						<View style={styles.habit}>
+						<View key={id} style={styles.habit}>
 							<View
 								// eslint-disable-next-line react-native/no-inline-styles
 								style={{
@@ -66,7 +76,6 @@ const HomeScreen = ({ navigation }) => {
 								}}
 							>
 								<HabbitButton
-									key={id}
 									name={name}
 									progress={progress}
 									onPress={() => navigation.navigate(Screens.Habit, { id })}
