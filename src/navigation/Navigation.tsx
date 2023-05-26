@@ -23,6 +23,7 @@ import { MorningSelectionScreen } from "../screens/creating-new-habbit/MorningSe
 import { NightSelectionScreen } from "../screens/creating-new-habbit/NightSelectionScreen";
 import { ProcrastinateScreen } from "../screens/creating-new-habbit/ProcrastinateScreen";
 import { ProductiveScreen } from "../screens/creating-new-habbit/ProductiveScreen";
+import { ChooseHabitScreen } from "../screens/creating-new-habbit/ChooseHabitScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -59,6 +60,7 @@ export const Navigation: FC = () => {
 						<Stack.Screen name={Screens.NIGHT_SELECTION} component={NightSelectionScreen}/>
 						<Stack.Screen name={Screens.PROCRASTINATE} component={ProcrastinateScreen}/>
 						<Stack.Screen name={Screens.PRODUCTIVE} component={ProductiveScreen}/>
+						<Stack.Screen name={Screens.CHOOSE_HABIT} component={ChooseHabitScreen}/>
 					</> : <Stack.Screen name={Screens.SPLASH} component={LoaderScreen}/>
 				}
 			</Stack.Navigator>
