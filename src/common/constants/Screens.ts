@@ -19,5 +19,6 @@ export enum Screens {
 	NIGHT_SELECTION = "NightSelection",
 	PROCRASTINATE = "Procrastinate",
 	PRODUCTIVE = "Productive",
+	CHOOSE_HABIT = "ChooseHabit",
 	LOGOUT = "Logout",
 }

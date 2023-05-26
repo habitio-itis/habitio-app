@@ -27,7 +27,7 @@ export const ProductiveScreen = ({ navigation }) => {
 	];
 	const handlePress = (id: number) => () => {
 		// todo fetch
-		navigation.navigate(Screens.PROCRASTINATE, { id });
+		navigation.navigate(Screens.CHOOSE_HABIT, { id });
 	};
 
 	return (
