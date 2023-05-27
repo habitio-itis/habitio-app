@@ -36,11 +36,11 @@ export const ProductiveScreen = ({ navigation }) => {
 				<Text style={styles.titleText}>What do you hope to achive with Main Habit</Text>
 			</View>
 			<View style={styles.rowsContainer}>
-				{data.map(({ text, id, image }) => (
+				{data.map(({ titleText, id, image }) => (
 					<CustomBigImageButton
 						key={id}
 						onPress={handlePress(id)}
-						text={text}
+						text={titleText}
 						buttonStyle={styles.button}
 						textStyle={styles.buttonText}
 						svgProps={{
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
 		position: "absolute",
 	},
 	buttonText: {
-		fontFamily: "Rubik",
+		fontFamily: "Rubik-Bold",
 		fontSize: 14,
 		color: "#FFFFFF",
 		fontWeight: "600",
