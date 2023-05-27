@@ -23,7 +23,7 @@ export const MorningSelectionScreen = ({ navigation }) => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.headerContainer}>
-				<Text style={styles.text}>Whats time do you usually wake up?</Text>
+				<Text style={styles.titleText}>Whats time do you usually wake up?</Text>
 			</View>
 			<View style={styles.imageButtonContainer}>
 				<LocalSvg
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
 		width: 290,
 		height: 82,
 	},
-	text: {
+	titleText: {
 		fontFamily: "Rubik-Bold",
 		fontStyle: "normal",
 		fontWeight: "600",

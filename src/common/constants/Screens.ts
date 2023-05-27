@@ -20,5 +20,6 @@ export enum Screens {
 	PROCRASTINATE = "Procrastinate",
 	PRODUCTIVE = "Productive",
 	CHOOSE_HABIT = "ChooseHabit",
+	SET_YOUR_GOAL = "SetYourGoal",
 	LOGOUT = "Logout",
 }

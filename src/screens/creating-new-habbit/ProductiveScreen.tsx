@@ -11,17 +11,17 @@ export const ProductiveScreen = ({ navigation }) => {
 	const data = [
 		{
 			id: 1,
-			text: "I want to build good habits",
+			titleText: "I want to build good habits",
 			image: require("../../assets/images/procrastinate/ProcrastinateButton1.svg"),
 		},
 		{
 			id: 2,
-			text: "I want to be organized",
+			titleText: "I want to be organized",
 			image: require("../../assets/images/procrastinate/ProcrastinateButton2.svg"),
 		},
 		{
 			id: 3,
-			text: "Not ready to answer",
+			titleText: "Not ready to answer",
 			image: require("../../assets/images/procrastinate/ProcrastinateButton3.svg"),
 		},
 	];
@@ -32,8 +32,8 @@ export const ProductiveScreen = ({ navigation }) => {
 
 	return (
 		<View style={styles.container}>
-			<View style={styles.textContainer}>
-				<Text style={styles.text}>What do you hope to achive with Main Habit</Text>
+			<View style={styles.titleTextContainer}>
+				<Text style={styles.titleText}>What do you hope to achive with Main Habit</Text>
 			</View>
 			<View style={styles.rowsContainer}>
 				{data.map(({ text, id, image }) => (
@@ -61,14 +61,14 @@ const styles = StyleSheet.create({
 		flex: 1,
 		alignItems: "center",
 	},
-	textContainer: {
+	titleTextContainer: {
 		top: 80,
 		marginTop: 60,
 		zIndex: 2,
 		width: 350,
 		height: 82,
 	},
-	text: {
+	titleText: {
 		color: "#FFECCC",
 		textAlign: "center",
 		fontFamily: "Rubik-Bold",
