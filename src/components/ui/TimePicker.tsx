@@ -45,7 +45,7 @@ const TimePicker = ({ setHour, setMinute, setPeriod, backgroundColor, width, hei
 	const renderHandler = (props) => (
 		<Text
 			style={[
-				styles.text,
+				styles.titleText,
 				{
 					fontSize: props.fontSize * 1.6,
 					color: props.fontColor,
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		overflow: "hidden",
 	},
-	text: {
+	titleText: {
 		fontFamily: "Rubik-Medium",
 		fontSize: 40,
 		fontWeight: "bold",

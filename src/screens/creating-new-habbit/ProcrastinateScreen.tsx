@@ -11,17 +11,17 @@ export const ProcrastinateScreen = ({ navigation }) => {
 	const data = [
 		{
 			id: 1,
-			text: "Yes and i’m ready to change that",
+			titleText: "Yes and i’m ready to change that",
 			image: require("../../assets/images/procrastinate/ProcrastinateButton1.svg"),
 		},
 		{
 			id: 2,
-			text: "No, I easily finish the tasks at hand",
+			titleText: "No, I easily finish the tasks at hand",
 			image: require("../../assets/images/procrastinate/ProcrastinateButton2.svg"),
 		},
 		{
 			id: 3,
-			text: "Not ready to answer",
+			titleText: "Not ready to answer",
 			image: require("../../assets/images/procrastinate/ProcrastinateButton3.svg"),
 		},
 	];
@@ -32,8 +32,8 @@ export const ProcrastinateScreen = ({ navigation }) => {
 
 	return (
 		<View style={styles.container}>
-			<View style={styles.textContainer}>
-				<Text style={styles.text}>Do you Procrastinate?</Text>
+			<View style={styles.titleTextContainer}>
+				<Text style={styles.titleText}>Do you Procrastinate?</Text>
 			</View>
 			<View style={styles.rowsContainer}>
 				{data.map(({ text, id, image }) => (
@@ -61,14 +61,14 @@ const styles = StyleSheet.create({
 		flex: 1,
 		alignItems: "center",
 	},
-	textContainer: {
+	titleTextContainer: {
 		top: 80,
 		marginTop: 60,
 		zIndex: 2,
 		width: 350,
 		height: 82,
 	},
-	text: {
+	titleText: {
 		color: "#FFECCC",
 		textAlign: "center",
 		fontFamily: "Rubik-Bold",

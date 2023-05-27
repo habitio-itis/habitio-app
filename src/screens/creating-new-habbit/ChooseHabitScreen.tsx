@@ -37,8 +37,8 @@ export const ChooseHabitScreen = ({ navigation }) => {
 
 	return (
 		<View style={styles.container}>
-			<View style={styles.textContainer}>
-				<Text style={styles.text}>Choose your first habit</Text>
+			<View style={styles.titleTextContainer}>
+				<Text style={styles.titleText}>Choose your first habit</Text>
 			</View>
 			<ScrollView showsVerticalScrollIndicator={false}>
 				<View style={styles.habitsContainerColumns}>
@@ -71,14 +71,14 @@ const styles = StyleSheet.create({
 		width: "100%",
 		height: "100%",
 	},
-	textContainer: {
+	titleTextContainer: {
 		top: 50,
 		marginTop: 60,
 		zIndex: 2,
 		width: 350,
 		height: 82,
 	},
-	text: {
+	titleText: {
 		color: "#FFECCC",
 		textAlign: "center",
 		fontFamily: "Rubik-Bold",
