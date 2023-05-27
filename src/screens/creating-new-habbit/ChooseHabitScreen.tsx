@@ -33,7 +33,7 @@ export const ChooseHabitScreen = ({ navigation }) => {
 	);
 
 	const onPressHandle = (id: number | string) => () =>
-		navigation.navigate(Screens.CHOOSE_HABIT, { id });
+		navigation.navigate(Screens.SET_YOUR_GOAL, { id });
 
 	return (
 		<View style={styles.container}>
@@ -43,9 +43,12 @@ export const ChooseHabitScreen = ({ navigation }) => {
 			<ScrollView showsVerticalScrollIndicator={false}>
 				<View style={styles.habitsContainerColumns}>
 					{manyHabits.map((habits) => (
-						<View style={styles.habitsContainerRow}>
+						<View
+							style={styles.habitsContainerRow}
+							key={habits.reduce((pv, cv) => pv + cv.id, "")}
+						>
 							{habits.map((habit) => (
-								<View style={styles.habitsContainer}>
+								<View style={styles.habitsContainer} key={habit.id}>
 									<HabitIcon
 										text={habit.title}
 										asset={habit.url}
