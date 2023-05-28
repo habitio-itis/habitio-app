@@ -21,7 +21,7 @@ export const PhoneInput = ({ value, onChangeText }) => {
 			placeholder="Номер телефона"
 			value={value}
 			containerStyle={styles.container}
-			textContainerStyle={styles.titleTextContainer}
+			textContainerStyle={styles.textContainer}
 			onChangeText={handlePhoneChange}
 			textInputStyle={styles.input}
 			codeTextStyle={styles.input}
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
 		margin: 5,
 		paddingRight: 6,
 	},
-	titleTextContainer: {
+	textContainer: {
 		flexDirection: "row",
 	},
 	input: {

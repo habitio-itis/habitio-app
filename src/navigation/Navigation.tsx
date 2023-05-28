@@ -48,6 +48,7 @@ export const Navigation: FC = () => {
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
 				{fontsLoaded ?
 					<>
+						<Stack.Screen name={Screens.SET_YOUR_GOAL} component={SetYourGoalScreen}/>
 						<Stack.Screen name={Screens.START} component={StartScreen}/>
 						<Stack.Screen name={Screens.GET_START} component={GetStartScreen}/>
 						<Stack.Screen name={Screens.REGISTER} component={RegisterScreen}/>
@@ -62,7 +63,6 @@ export const Navigation: FC = () => {
 						<Stack.Screen name={Screens.PROCRASTINATE} component={ProcrastinateScreen}/>
 						<Stack.Screen name={Screens.PRODUCTIVE} component={ProductiveScreen}/>
 						<Stack.Screen name={Screens.CHOOSE_HABIT} component={ChooseHabitScreen}/>
-						<Stack.Screen name={Screens.SET_YOUR_GOAL} component={SetYourGoalScreen}/>
 					</> : <Stack.Screen name={Screens.SPLASH} component={LoaderScreen}/>
 				}
 			</Stack.Navigator>
