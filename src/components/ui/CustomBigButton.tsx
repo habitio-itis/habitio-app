@@ -11,7 +11,7 @@ export interface Props {
 
 	text: string;
 
-	buttonStyle: StyleProp<ViewStyle>;
+	buttonStyle: ViewStyle;
 
 	textStyle: StyleProp<TextStyle>;
 }

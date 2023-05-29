@@ -36,7 +36,7 @@ export const CustomBigImageButton = ({
 	svgProps,
 }: Props) => {
 	return (
-		<TouchableOpacity onPress={onPress} style={Object.assign({}, styles.button, buttonStyle)}>
+		<TouchableOpacity onPress={onPress} style={[styles.button, buttonStyle]}>
 			<View style={styles.buttonContainer}>
 				<LocalSvg {...svgProps} style={styles.backgroundSvg} />
 				<View style={styles.buttonTextContainer}>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
 			height: 2,
 		},
 		shadowOpacity: 0.25,
-		shadowRadius: 3.84,
+		shadowRadius: 4,
 
 		width: "75%",
 		elevation: 5,
