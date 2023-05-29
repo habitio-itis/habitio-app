@@ -40,7 +40,7 @@ export const CustomBigImageButton = ({
 			<View style={styles.buttonContainer}>
 				<LocalSvg {...svgProps} style={styles.backgroundSvg} />
 				<View style={styles.buttonTextContainer}>
-					<Text style={Object.assign({}, styles.buttonText, textStyle)}>{text}</Text>
+					<Text style={[styles.buttonText, textStyle]}>{text}</Text>
 				</View>
 			</View>
 		</TouchableOpacity>

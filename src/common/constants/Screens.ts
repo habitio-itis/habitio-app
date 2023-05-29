@@ -22,4 +22,5 @@ export enum Screens {
 	CHOOSE_HABIT = "ChooseHabit",
 	SET_YOUR_GOAL = "SetYourGoal",
 	LOGOUT = "Logout",
+	Habit = "Habit"
 }

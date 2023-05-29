@@ -38,7 +38,7 @@ export const HabitIcon = ({
 }: Props) => {
 	return (
 		<View style={styles.container}>
-			<TouchableOpacity onPress={onPress} style={Object.assign({}, styles.button, buttonStyle)}>
+			<TouchableOpacity onPress={onPress} style={[styles.button, buttonStyle]}>
 				<LocalSvg
 					{...svgProps}
 					style={styles.icon}

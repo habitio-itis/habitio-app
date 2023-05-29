@@ -9,10 +9,16 @@ import { FONTS } from "@Constants/Styles";
 import { LocalSvg } from "react-native-svg";
 import { CustomBigButton } from "@Components/ui/CustomBigButton";
 import { Screens } from "@Constants/Screens";
+import { isAuthorized } from "../providers/AuthProvider";
 
 const GetStartScreen = ({ navigation }) => {
-	const handlePress = () => {
-		navigation.navigate(Screens.REGISTER);
+	const handlePress = async () => {
+		const auth = await isAuthorized();
+		if (auth) {
+			navigation.navigate(Screens.HOME);
+		} else {
+			navigation.navigate(Screens.REGISTER);
+		}
 	};
 
 	return (

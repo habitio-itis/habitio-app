@@ -1,0 +1,10 @@
+{
+	"liveSassCompile.settings.generateMap": false,
+	"prettier.singleQuote": false,
+	"javascript.preferences.quoteStyle": "double",
+	"typescript.preferences.quoteStyle": "double",
+	"liveSassCompile.settings.autoprefix": [
+
+	],
+	"liveSassCompile.settings.forceBaseDirectory": ""
+}

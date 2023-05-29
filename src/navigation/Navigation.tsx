@@ -19,6 +19,7 @@ import { TrackYourGoalScreen } from "../screens/after-auth/TrackYourGoalScreen";
 import { GetBurnScreen } from "../screens/after-auth/GetBurnScreen";
 import { EatWellScreen } from "../screens/after-auth/EatWellScreen";
 import { MorningYogaScreen } from "../screens/after-auth/MorningYogaScreen";
+import { HabitScreen } from "../screens/HabitScreen";
 import { MorningSelectionScreen } from "../screens/creating-new-habbit/MorningSelectionScreen";
 import { NightSelectionScreen } from "../screens/creating-new-habbit/NightSelectionScreen";
 import { ProcrastinateScreen } from "../screens/creating-new-habbit/ProcrastinateScreen";
@@ -48,7 +49,6 @@ export const Navigation: FC = () => {
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
 				{fontsLoaded ?
 					<>
-						<Stack.Screen name={Screens.SET_YOUR_GOAL} component={SetYourGoalScreen}/>
 						<Stack.Screen name={Screens.START} component={StartScreen}/>
 						<Stack.Screen name={Screens.GET_START} component={GetStartScreen}/>
 						<Stack.Screen name={Screens.REGISTER} component={RegisterScreen}/>
@@ -63,6 +63,8 @@ export const Navigation: FC = () => {
 						<Stack.Screen name={Screens.PROCRASTINATE} component={ProcrastinateScreen}/>
 						<Stack.Screen name={Screens.PRODUCTIVE} component={ProductiveScreen}/>
 						<Stack.Screen name={Screens.CHOOSE_HABIT} component={ChooseHabitScreen}/>
+						<Stack.Screen name={Screens.SET_YOUR_GOAL} component={SetYourGoalScreen}/>
+						<Stack.Screen name={Screens.Habit} component={HabitScreen} />
 					</> : <Stack.Screen name={Screens.SPLASH} component={LoaderScreen}/>
 				}
 			</Stack.Navigator>

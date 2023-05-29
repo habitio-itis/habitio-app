@@ -8,13 +8,13 @@ import { CustomCircleButton } from "@Components/ui/CustomCircleButton";
 import React from "react";
 import { Screens } from "@Constants/Screens";
 
-export interface IButtonAfterRegister {
+export interface Props {
 	screen: Screens;
 
 	navigation;
 }
 
-export const ButtonAfterRegister = ({ screen, navigation }: IButtonAfterRegister) => {
+export const ButtonAfterRegister = ({ screen, navigation }: Props) => {
 	const handlePress = () => {
 		navigation.navigate(screen);
 	};

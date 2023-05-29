@@ -4,7 +4,7 @@
  * @Time: 12:33 PM
  */
 import React from "react";
-import { StyleProp, StyleSheet, Text, TextStyle, TouchableOpacity, ViewStyle } from "react-native";
+import { StyleSheet, Text, TextStyle, TouchableOpacity, ViewStyle } from "react-native";
 
 export interface Props {
 	onPress: () => void;
@@ -13,17 +13,17 @@ export interface Props {
 
 	buttonStyle: ViewStyle;
 
-	textStyle: StyleProp<TextStyle>;
+	textStyle: TextStyle;
 }
 
 export const CustomBigButton = ({ onPress, text, buttonStyle, textStyle }: Props) => {
 	return (
-		<TouchableOpacity onPress={onPress} style={Object.assign({}, styles.button, buttonStyle)}>
-			<Text style={Object.assign({}, styles.img, textStyle)}>{text}</Text>
+		<TouchableOpacity onPress={onPress} style={StyleSheet.compose(styles.button, buttonStyle)}>
+			<Text style={StyleSheet.compose(styles.text, textStyle)}>{text}</Text>
 		</TouchableOpacity>
 	);
 };
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<{ button: ViewStyle; text: TextStyle }>({
 	button: {
 		backgroundColor: "#3B82F6",
 		borderRadius: 10,
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 		width: "75%",
 		elevation: 5,
 	},
-	img: {
+	text: {
 		color: "#fff",
 		fontSize: 16,
 		textAlign: "center",
