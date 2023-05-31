@@ -20,6 +20,12 @@ import { GetBurnScreen } from "../screens/after-auth/GetBurnScreen";
 import { EatWellScreen } from "../screens/after-auth/EatWellScreen";
 import { MorningYogaScreen } from "../screens/after-auth/MorningYogaScreen";
 import { HabitScreen } from "../screens/HabitScreen";
+import { MorningSelectionScreen } from "../screens/creating-new-habbit/MorningSelectionScreen";
+import { NightSelectionScreen } from "../screens/creating-new-habbit/NightSelectionScreen";
+import { ProcrastinateScreen } from "../screens/creating-new-habbit/ProcrastinateScreen";
+import { ProductiveScreen } from "../screens/creating-new-habbit/ProductiveScreen";
+import { ChooseHabitScreen } from "../screens/creating-new-habbit/ChooseHabitScreen";
+import { SetYourGoalScreen } from "../screens/creating-new-habbit/SetYourGoalScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,8 +37,8 @@ export const Navigation: FC = () => {
 		const loadFonts = async () => {
 			await loadCustomFonts();
 
-			// Ждем 2 секунды по красоте
-			await timeout(2000);
+			// Ждем + 1 секунду по красоте
+			await timeout(1000);
 			setFontsLoaded(true);
 		};
 		loadFonts();
@@ -52,6 +58,12 @@ export const Navigation: FC = () => {
 						<Stack.Screen name={Screens.MORNING_YOGA} component={MorningYogaScreen}/>
 						<Stack.Screen name={Screens.HOME} component={HomeScreen}/>
 						<Stack.Screen name={Screens.LOGIN} component={LoginScreen}/>
+						<Stack.Screen name={Screens.MORNING_SELECTION} component={MorningSelectionScreen}/>
+						<Stack.Screen name={Screens.NIGHT_SELECTION} component={NightSelectionScreen}/>
+						<Stack.Screen name={Screens.PROCRASTINATE} component={ProcrastinateScreen}/>
+						<Stack.Screen name={Screens.PRODUCTIVE} component={ProductiveScreen}/>
+						<Stack.Screen name={Screens.CHOOSE_HABIT} component={ChooseHabitScreen}/>
+						<Stack.Screen name={Screens.SET_YOUR_GOAL} component={SetYourGoalScreen}/>
 						<Stack.Screen name={Screens.Habit} component={HabitScreen} />
 					</> : <Stack.Screen name={Screens.SPLASH} component={LoaderScreen}/>
 				}

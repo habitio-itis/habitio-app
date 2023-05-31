@@ -4,8 +4,8 @@
  * @Time: 2:02 AM
  */
 import React, { useContext, useEffect, useState } from "react";
-import { Text, SafeAreaView, View, StyleSheet } from "react-native";
-import { AuthContext, isAuthorized } from "../providers/AuthProvider";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { AuthContext } from "../providers/AuthProvider";
 import { Screens } from "@Constants/Screens";
 import { Input } from "@Components/ui/Input";
 import { OAuthButton } from "@Components/ui/OAuthButton";
@@ -58,11 +58,24 @@ const LoginScreen = ({ navigation }) => {
 						onChangeText={setPassword}
 					/>
 				</View>
-				<AppButton text="Login" style={styles.loginButton} onPress={() => loginHandler(login, password)} />
-				<AppButton text="Forgot Password?" theme="text" style={styles.forgotPassword} onPress={() => {}} />
+				<AppButton
+					text="Login"
+					style={styles.loginButton}
+					onPress={() => loginHandler(login, password)}
+				/>
+				<AppButton
+					text="Forgot Password?"
+					theme="text"
+					style={styles.forgotPassword}
+					onPress={() => {}}
+				/>
 				<View style={styles.signIn}>
 					<Text>DON’T HAVE AN ACCOUNT? </Text>
-					<AppButton theme="link" text=" SIGN UP" onPress={() => navigation.navigate(Screens.REGISTER)} />
+					<AppButton
+						theme="link"
+						text=" SIGN UP"
+						onPress={() => navigation.navigate(Screens.REGISTER)}
+					/>
 				</View>
 			</View>
 		</SafeAreaView>
@@ -144,5 +157,3 @@ const styles = StyleSheet.create({
 });
 
 export default LoginScreen;
-
-

@@ -1,4 +1,4 @@
-import { StyleProp, StyleSheet, Text, TextStyle, View, ViewStyle } from "react-native";
+import { StyleProp, StyleSheet, Text, TextStyle, ViewStyle } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { FacebookIcon, GoogleIcon } from "./Icons";
 import { FC } from "react";
@@ -30,15 +30,20 @@ const getStylesObject = (theme: "facebook" | "google") => {
 	} as const;
 	if (theme === "facebook") {
 		return StyleSheet.create({
-			button: { ...styles.button, backgroundColor: "#7583CA"  },
+			button: { ...styles.button, backgroundColor: "#7583CA" },
 			text: { ...styles.text, color: "white" },
 		});
 	} else if (theme === "google") {
 		return StyleSheet.create({
-			button: { ...styles.button, backgroundColor: "white", borderColor: "#EBEAEC", borderWidth: 1 },
+			button: {
+				...styles.button,
+				backgroundColor: "white",
+				borderColor: "#EBEAEC",
+				borderWidth: 1,
+			},
 			text: { ...styles.text, color: "#3F414E" },
 		});
-	};
+	}
 };
 
 export const OAuthButton: FC<Props> = ({ theme = "facebook", buttonStyle, textStyle, onPress }) => {
@@ -46,11 +51,16 @@ export const OAuthButton: FC<Props> = ({ theme = "facebook", buttonStyle, textSt
 	const facebook = theme === "facebook";
 	return (
 		<TouchableOpacity style={[styles.button, buttonStyle]} onPress={onPress}>
-			{facebook ? <FacebookIcon width={26} height={26} /> : <GoogleIcon width={26} height={26} />}
-			{facebook ?
-				<Text style={[styles.text, textStyle]}>CONTINUE WITH FACEBOOK</Text> : 
+			{facebook ? (
+				<FacebookIcon width={26} height={26} />
+			) : (
+				<GoogleIcon width={26} height={26} />
+			)}
+			{facebook ? (
+				<Text style={[styles.text, textStyle]}>CONTINUE WITH FACEBOOK</Text>
+			) : (
 				<Text style={[styles.text, textStyle]}>CONTINUE WITH GOOGLE</Text>
-			}
+			)}
 		</TouchableOpacity>
 	);
 };

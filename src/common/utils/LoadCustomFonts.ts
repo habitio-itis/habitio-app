@@ -16,5 +16,6 @@ export const loadCustomFonts = (): Promise<void> => {
 		"Rubik-Regular": require("../../assets/fonts/Rubik-Regular.ttf"),
 		"Rubik-Black": require("../../assets/fonts/Rubik-Black.ttf"),
 		"Rubik-Bold": require("../../assets/fonts/Rubik-Bold.ttf"),
+		"Rubik-Medium": require("../../assets/fonts/Rubik-Medium.ttf"),
 	});
 };
