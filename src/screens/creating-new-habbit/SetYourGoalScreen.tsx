@@ -46,9 +46,8 @@ export const SetYourGoalScreen = ({ navigation }) => {
 		);
 
 	const onPressHandle = () => {
-		navigation.navigate(Screens.SET_YOUR_GOAL);
 		const goal = +inputValue.replace(/[^0-9,.]/g, "").replace(",", ".");
-
+		navigation.navigate(Screens.HOME, { goal });
 		// todo fetch
 	};
 

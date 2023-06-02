@@ -13,6 +13,7 @@ import { BackButton } from "@Components/ui/BackButton";
 import { LocalSvg } from "react-native-svg";
 import { FONTS } from "@Constants/Styles";
 import { AppButton } from "@Components/ui/Button";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 const RegisterScreen = ({ navigation }) => {
 	const [login, setLogin] = useState("");
@@ -27,52 +28,65 @@ const RegisterScreen = ({ navigation }) => {
 		}
 	}, [user]);
 
-
 	return (
 		<SafeAreaView style={styles.safeArea}>
-			<View style={styles.container}>
-				<View style={styles.background}>
-					<View style={styles.rightArch}>
-						<LocalSvg asset={require("../assets/images/RightArch.svg")} />
+			<KeyboardAwareScrollView>
+				<View style={styles.container}>
+					<View style={styles.background}>
+						<View style={styles.rightArch}>
+							<LocalSvg asset={require("../assets/images/RightArch.svg")} />
+						</View>
+						<View style={styles.leftArch}>
+							<LocalSvg asset={require("../assets/images/LeftArch.svg")} />
+						</View>
 					</View>
-					<View style={styles.leftArch}>
-						<LocalSvg asset={require("../assets/images/LeftArch.svg")} />
+					<BackButton onPress={() => navigation.goBack()} style={styles.backButton} />
+					<Text style={styles.title}>Create your account</Text>
+					<OAuthButton
+						theme="facebook"
+						buttonStyle={styles.facebookButton}
+						onPress={() => {}}
+					/>
+					<OAuthButton theme="google" buttonStyle={styles.googleButton} onPress={() => {}} />
+					<Text style={styles.login}>OR LOG IN WITH EMAIL</Text>
+					<View style={styles.fields}>
+						<Input
+							type="text"
+							value={login}
+							onChangeText={setLogin}
+							style={styles.input}
+							placeholder="Login"
+						/>
+						<Input
+							type="email"
+							value={email}
+							onChangeText={setEmail}
+							style={styles.input}
+							placeholder="Email address"
+						/>
+						<Input
+							type="password"
+							value={password}
+							onChangeText={setPassword}
+							style={styles.input}
+							placeholder="Password"
+						/>
+					</View>
+					<AppButton
+						style={styles.getStratedButton}
+						text="GET STARTED"
+						onPress={() => registerHandler(login, email, password)}
+					/>
+					<View style={styles.signUn}>
+						<Text>ALREADY HAVE AN ACCOUNT?</Text>
+						<AppButton
+							theme="link"
+							text=" SIGN IN"
+							onPress={() => navigation.navigate(Screens.LOGIN)}
+						/>
 					</View>
 				</View>
-				<BackButton onPress={() => navigation.goBack()} style={styles.backButton} />
-				<Text style={styles.title}>Create your account</Text>
-				<OAuthButton theme="facebook" buttonStyle={styles.facebookButton} onPress={() => {}} />
-				<OAuthButton theme="google" buttonStyle={styles.googleButton} onPress={() => {}} />
-				<Text style={styles.login}>OR LOG IN WITH EMAIL</Text>
-				<View style={styles.fields}>
-					<Input
-						type="text"
-						value={login}
-						onChangeText={setLogin}
-						style={styles.input}
-						placeholder="Login"
-					/>
-					<Input
-						type="email"
-						value={email}
-						onChangeText={setEmail}
-						style={styles.input}
-						placeholder="Email address"
-					/>
-					<Input
-						type="password"
-						value={password}
-						onChangeText={setPassword}
-						style={styles.input}
-						placeholder="Password"
-					/>
-				</View>
-				<AppButton style={styles.getStratedButton} text="GET STARTED" onPress={() => registerHandler(login, email, password)} />
-				<View style={styles.signUn}>
-					<Text>ALREADY HAVE AN ACCOUNT?</Text>
-					<AppButton theme="link" text=" SIGN IN" onPress={() => navigation.navigate(Screens.LOGIN)} />
-				</View>
-			</View>
+			</KeyboardAwareScrollView>
 		</SafeAreaView>
 	);
 };
