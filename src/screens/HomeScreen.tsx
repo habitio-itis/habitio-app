@@ -83,7 +83,7 @@ const HomeScreen = ({ navigation }) => {
 							</View>
 						</View>
 					))}
-					<AddButton style={styles.addButton} onPress={() => {}} />
+					<AddButton style={styles.addButton} onPress={() => navigation.navigate(Screens.CHOOSE_HABIT)} />
 				</View>
 				<View style={styles.activities}>
 

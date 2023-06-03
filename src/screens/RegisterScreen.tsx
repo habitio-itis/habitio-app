@@ -23,7 +23,7 @@ const RegisterScreen = ({ navigation }) => {
 
 	useEffect(() => {
 		if (user) {
-			navigation.navigate(Screens.HOME);
+			navigation.navigate(Screens.MORNING_SELECTION);
 			return;
 		}
 	}, [user]);
